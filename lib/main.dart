@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'dart:async';
+import 'dart:math';
 
 void main() {
   runApp(const AzelingoApp());
@@ -95,7 +96,7 @@ class _MainNavigationHolderState extends State<MainNavigationHolder> {
   }
 }
 
-// --- ANA EKRAN (TAM 30 KATEQORİYA) ---
+// --- ANA EKRAN ---
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
 
@@ -110,7 +111,6 @@ class _HomeScreenState extends State<HomeScreen> {
   void initState() {
     super.initState();
     allLessons = [
-      // --- KOLAY (10) ---
       _createFullLesson(
         "Tanışlıq",
         "Selamlaşma ve Tanışma",
@@ -162,7 +162,6 @@ class _HomeScreenState extends State<HomeScreen> {
           "Tebrik ederim",
         ],
       ),
-
       _createFullLesson(
         "Rənglər",
         "Renklerin Dünyası",
@@ -214,7 +213,6 @@ class _HomeScreenState extends State<HomeScreen> {
           "Koyu",
         ],
       ),
-
       _createFullLesson(
         "Rəqəmlər",
         "Sayılar ve Sayma",
@@ -266,7 +264,6 @@ class _HomeScreenState extends State<HomeScreen> {
           "Yüz",
         ],
       ),
-
       _createFullLesson(
         "Ailə",
         "Aile Bireyleri",
@@ -318,7 +315,6 @@ class _HomeScreenState extends State<HomeScreen> {
           "Yeğen (K)",
         ],
       ),
-
       _createFullLesson(
         "Meyvələr",
         "Meyveler ve Sebzeler",
@@ -370,7 +366,6 @@ class _HomeScreenState extends State<HomeScreen> {
           "Yeşillik",
         ],
       ),
-
       _createFullLesson(
         "Heyvanlar",
         "Sevimli Dostlarımız",
@@ -422,7 +417,6 @@ class _HomeScreenState extends State<HomeScreen> {
           "Kuş",
         ],
       ),
-
       _createFullLesson(
         "Geyim",
         "Kıyafetler ve Moda",
@@ -474,7 +468,6 @@ class _HomeScreenState extends State<HomeScreen> {
           "Şemsiye",
         ],
       ),
-
       _createFullLesson(
         "Məktəb",
         "Eğitim ve Okul",
@@ -522,11 +515,10 @@ class _HomeScreenState extends State<HomeScreen> {
           "Harita",
           "Çanta",
           "Sıra",
-          "Yazı tahtası",
+          "Yazı taxtası",
           "Tebeşir",
         ],
       ),
-
       _createFullLesson(
         "Günlər",
         "Günler ve Aylar",
@@ -578,7 +570,6 @@ class _HomeScreenState extends State<HomeScreen> {
           "Takvim",
         ],
       ),
-
       _createFullLesson(
         "Bədən",
         "Vücudumuz",
@@ -630,8 +621,6 @@ class _HomeScreenState extends State<HomeScreen> {
           "Kan",
         ],
       ),
-
-      // --- ORTA (10) ---
       _createFullLesson(
         "Restoran",
         "Yemek ve Sipariş",
@@ -683,7 +672,6 @@ class _HomeScreenState extends State<HomeScreen> {
           "Lezzetli",
         ],
       ),
-
       _createFullLesson(
         "Duyğular",
         "Duygular ve Hisler",
@@ -735,7 +723,6 @@ class _HomeScreenState extends State<HomeScreen> {
           "Beklemek",
         ],
       ),
-
       _createFullLesson(
         "Hava",
         "Hava Durumu",
@@ -766,7 +753,7 @@ class _HomeScreenState extends State<HomeScreen> {
         ],
         [
           "Güneş",
-          "Bulud",
+          "Bulut",
           "Yağmur",
           "Kar",
           "Rüzgar",
@@ -787,7 +774,6 @@ class _HomeScreenState extends State<HomeScreen> {
           "Tahmin",
         ],
       ),
-
       _createFullLesson(
         "Səyahət",
         "Tatil ve Gezi",
@@ -839,7 +825,6 @@ class _HomeScreenState extends State<HomeScreen> {
           "Yabancı",
         ],
       ),
-
       _createFullLesson(
         "Peşələr",
         "Meslekler",
@@ -891,7 +876,6 @@ class _HomeScreenState extends State<HomeScreen> {
           "Girişimci",
         ],
       ),
-
       _createFullLesson(
         "Şəhər",
         "Şehir Hayatı",
@@ -943,7 +927,6 @@ class _HomeScreenState extends State<HomeScreen> {
           "Sinema",
         ],
       ),
-
       _createFullLesson(
         "Ev",
         "Ev Eşyaları",
@@ -995,7 +978,6 @@ class _HomeScreenState extends State<HomeScreen> {
           "Lamba",
         ],
       ),
-
       _createFullLesson(
         "Nəqliyyat",
         "Ulaşım Araçları",
@@ -1047,7 +1029,6 @@ class _HomeScreenState extends State<HomeScreen> {
           "Yolcu",
         ],
       ),
-
       _createFullLesson(
         "Hobbilər",
         "Hobiler ve Eğlence",
@@ -1099,7 +1080,6 @@ class _HomeScreenState extends State<HomeScreen> {
           "Koleksiyon",
         ],
       ),
-
       _createFullLesson(
         "Sağlamlıq",
         "Sağlık ve Hastane",
@@ -1151,8 +1131,6 @@ class _HomeScreenState extends State<HomeScreen> {
           "Uyku",
         ],
       ),
-
-      // --- ZOR (10) ---
       _createFullLesson(
         "Zamanlar",
         "Gramer ve Zamanlar",
@@ -1204,7 +1182,6 @@ class _HomeScreenState extends State<HomeScreen> {
           "Akşam",
         ],
       ),
-
       _createFullLesson(
         "Siyasət",
         "Politika ve Devlet",
@@ -1256,7 +1233,6 @@ class _HomeScreenState extends State<HomeScreen> {
           "Barış",
         ],
       ),
-
       _createFullLesson(
         "İncəsənət",
         "Sanat ve Kültür",
@@ -1308,7 +1284,6 @@ class _HomeScreenState extends State<HomeScreen> {
           "Modern",
         ],
       ),
-
       _createFullLesson(
         "Texnologiya",
         "Bilim ve Teknoloji",
@@ -1360,7 +1335,6 @@ class _HomeScreenState extends State<HomeScreen> {
           "Klavye",
         ],
       ),
-
       _createFullLesson(
         "Ədəbiyyat",
         "Edebiyat ve Şiir",
@@ -1412,7 +1386,6 @@ class _HomeScreenState extends State<HomeScreen> {
           "Mısra",
         ],
       ),
-
       _createFullLesson(
         "İqtisadiyyat",
         "Ekonomi ve Finans",
@@ -1464,7 +1437,6 @@ class _HomeScreenState extends State<HomeScreen> {
           "Hisse senedi",
         ],
       ),
-
       _createFullLesson(
         "İdiomlar",
         "Deyimler ve Atasözleri",
@@ -1516,7 +1488,6 @@ class _HomeScreenState extends State<HomeScreen> {
           "Hırsını boşaltmak",
         ],
       ),
-
       _createFullLesson(
         "Fəlsəfə",
         "Düşünce ve Mantık",
@@ -1568,7 +1539,6 @@ class _HomeScreenState extends State<HomeScreen> {
           "İdrak",
         ],
       ),
-
       _createFullLesson(
         "Təbiət",
         "Çevre ve Ekoloji",
@@ -1620,7 +1590,6 @@ class _HomeScreenState extends State<HomeScreen> {
           "Enerji",
         ],
       ),
-
       _createFullLesson(
         "Hüquq",
         "Hukuk ve Adalet",
@@ -1713,7 +1682,6 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
         ),
         centerTitle: true,
-        backgroundColor: Colors.transparent,
       ),
       body: ListView.builder(
         padding: const EdgeInsets.all(20),
@@ -1780,7 +1748,7 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 }
 
-// --- QUIZ EKRANI ---
+// --- QUIZ EKRANI (ROMANTİK MESAJLI) ---
 class QuizScreen extends StatefulWidget {
   final Lesson lesson;
   const QuizScreen({super.key, required this.lesson});
@@ -1794,6 +1762,24 @@ class _QuizScreenState extends State<QuizScreen> {
   int? _selectedIdx;
   bool? _isCorrect;
   List<String> _shuffledOptions = [];
+  String? _floatingMessage;
+  Alignment _messageAlignment = Alignment.center;
+
+  final List<String> _romanticMessages = [
+    "Səni sevirəm! ❤️",
+    "Canımsan!",
+    "Mükəmməlsən!",
+    "Hər şeyim!",
+    "Gözəl gülüşünə qurban!",
+    "Nə yaxşı ki, varsan!",
+    "Sən mənim dünyamsan!",
+    "Qəlbimin sahibisən!",
+    "Dünyanın ən ağıllısı!",
+    "İnanıram sənə!",
+    "Uğurlu yolum!",
+    "Mənim şansım!",
+    "Səninlə hər şey gözəl!",
+  ];
 
   @override
   void initState() {
@@ -1809,9 +1795,24 @@ class _QuizScreenState extends State<QuizScreen> {
     _isCorrect = null;
   }
 
+  void _showRomanticMessage() {
+    setState(() {
+      _floatingMessage =
+          _romanticMessages[Random().nextInt(_romanticMessages.length)];
+      List<Alignment> alignments = [
+        Alignment.topCenter,
+        Alignment.centerLeft,
+        Alignment.centerRight,
+      ];
+      _messageAlignment = alignments[Random().nextInt(alignments.length)];
+    });
+    Future.delayed(const Duration(milliseconds: 1500), () {
+      if (mounted) setState(() => _floatingMessage = null);
+    });
+  }
+
   void _handleAnswer(int i) {
     if (_selectedIdx != null) return;
-
     String selectedText = _shuffledOptions[i];
     String correctText = widget.lesson.questions[_currentIdx]['tr'];
     String qText = widget.lesson.questions[_currentIdx]['q'];
@@ -1822,6 +1823,7 @@ class _QuizScreenState extends State<QuizScreen> {
     });
 
     if (_isCorrect!) {
+      _showRomanticMessage();
       bool exists = learnedWordsNotifier.value.any((e) => e['az'] == qText);
       if (!exists) {
         learnedWordsNotifier.value = [
@@ -1897,43 +1899,71 @@ class _QuizScreenState extends State<QuizScreen> {
     var q = widget.lesson.questions[_currentIdx];
     return Scaffold(
       appBar: AppBar(title: Text("${_currentIdx + 1} / 20"), centerTitle: true),
-      body: Padding(
-        padding: const EdgeInsets.all(25),
-        child: Column(
-          children: [
-            LinearProgressIndicator(
-              value: (_currentIdx + 1) / 20,
-              minHeight: 10,
-              color: widget.lesson.gradient[0],
-              backgroundColor: Colors.white10,
-            ),
-            const SizedBox(height: 50),
-            Container(
-              width: double.infinity,
-              padding: const EdgeInsets.all(40),
-              decoration: BoxDecoration(
-                color: const Color(0xFF151515),
-                borderRadius: BorderRadius.circular(35),
-                border: Border.all(color: Colors.white10),
-              ),
-              child: Text(
-                q['q'],
-                style: const TextStyle(
-                  fontSize: 48,
-                  fontWeight: FontWeight.w900,
+      body: Stack(
+        children: [
+          Padding(
+            padding: const EdgeInsets.all(25),
+            child: Column(
+              children: [
+                LinearProgressIndicator(
+                  value: (_currentIdx + 1) / 20,
+                  color: widget.lesson.gradient[0],
                 ),
-                textAlign: TextAlign.center,
+                const SizedBox(height: 50),
+                Container(
+                  width: double.infinity,
+                  padding: const EdgeInsets.all(40),
+                  decoration: BoxDecoration(
+                    color: const Color(0xFF151515),
+                    borderRadius: BorderRadius.circular(35),
+                    border: Border.all(color: Colors.white10),
+                  ),
+                  child: Text(
+                    q['q'],
+                    style: const TextStyle(
+                      fontSize: 48,
+                      fontWeight: FontWeight.w900,
+                    ),
+                    textAlign: TextAlign.center,
+                  ),
+                ),
+                const SizedBox(height: 40),
+                Expanded(
+                  child: ListView.builder(
+                    itemCount: 3,
+                    itemBuilder: (context, i) => _option(i),
+                  ),
+                ),
+              ],
+            ),
+          ),
+          if (_floatingMessage != null)
+            Align(
+              alignment: _messageAlignment,
+              child: Container(
+                margin: const EdgeInsets.all(30),
+                padding: const EdgeInsets.all(20),
+                decoration: BoxDecoration(
+                  color: Colors.red.withOpacity(0.9),
+                  borderRadius: BorderRadius.circular(20),
+                  boxShadow: [
+                    BoxShadow(
+                      blurRadius: 20,
+                      color: Colors.red.withOpacity(0.5),
+                    ),
+                  ],
+                ),
+                child: Text(
+                  _floatingMessage!,
+                  style: const TextStyle(
+                    color: Colors.white,
+                    fontSize: 22,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
               ),
             ),
-            const SizedBox(height: 40),
-            Expanded(
-              child: ListView.builder(
-                itemCount: 3,
-                itemBuilder: (context, i) => _option(i),
-              ),
-            ),
-          ],
-        ),
+        ],
       ),
     );
   }
